@@ -1,8 +1,6 @@
 # Bird Counting and Weight Estimation System
 
 **Author**: Krutika Borase  
-**Project**: ML/AI Engineer Internship Assessment - Kuppismart Solutions (Livestockify)  
-**Date**: December 2024
 
 ## Overview
 
