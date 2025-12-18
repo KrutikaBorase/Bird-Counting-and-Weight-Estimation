@@ -1,6 +1,12 @@
 # Bird Counting and Weight Estimation System
 
-A computer vision system for analyzing poultry farm CCTV footage to count birds and estimate weights using YOLOv8 detection, DeepSORT tracking, and feature-based weight proxy calculation.
+**Author**: Krutika Borase  
+**Project**: ML/AI Engineer Internship Assessment - Kuppismart Solutions (Livestockify)  
+**Date**: December 2024
+
+## Overview
+
+This project implements a computer vision system for analyzing poultry farm CCTV footage to count birds and estimate weights. The system uses YOLOv8 for object detection, DeepSORT for multi-object tracking, and a feature-based approach for weight proxy calculation.
 
 ## Features
 
@@ -399,13 +405,18 @@ For best results, use videos with:
 5. **Behavior Analysis**: Detect feeding, drinking, abnormal behavior
 6. **Database Integration**: Store results in database for trend analysis
 
-## License
+## Author
 
-This project is for educational and evaluation purposes.
+**Krutika Borase**  
+ML/AI Engineer Internship Candidate  
+Kuppismart Solutions (Livestockify)
 
-## Contact
+## Acknowledgments
 
-For questions or issues, please refer to the task submission guidelines.
+This project was developed as part of the ML/AI Engineer Internship assessment. The implementation uses:
+- **YOLOv8** by Ultralytics for object detection
+- **DeepSORT** for multi-object tracking
+- **FastAPI** for REST API development
 
 ---
 
