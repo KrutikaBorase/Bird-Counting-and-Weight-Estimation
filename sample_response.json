@@ -1,0 +1,162 @@
+{
+  "counts": [
+    {
+      "timestamp": 0.033,
+      "frame_number": 1,
+      "count": 18
+    },
+    {
+      "timestamp": 0.067,
+      "frame_number": 2,
+      "count": 18
+    },
+    {
+      "timestamp": 0.1,
+      "frame_number": 3,
+      "count": 19
+    },
+    {
+      "timestamp": 0.133,
+      "frame_number": 4,
+      "count": 19
+    },
+    {
+      "timestamp": 0.167,
+      "frame_number": 5,
+      "count": 20
+    }
+  ],
+  "tracks_sample": [
+    {
+      "track_id": 1,
+      "bbox": {
+        "x1": 245.3,
+        "y1": 412.8,
+        "x2": 298.7,
+        "y2": 465.2
+      },
+      "confidence": 0.89,
+      "frame_number": 45
+    },
+    {
+      "track_id": 3,
+      "bbox": {
+        "x1": 567.1,
+        "y1": 234.5,
+        "x2": 615.9,
+        "y2": 283.3
+      },
+      "confidence": 0.92,
+      "frame_number": 67
+    },
+    {
+      "track_id": 5,
+      "bbox": {
+        "x1": 123.4,
+        "y1": 678.9,
+        "x2": 172.6,
+        "y2": 728.1
+      },
+      "confidence": 0.85,
+      "frame_number": 89
+    },
+    {
+      "track_id": 7,
+      "bbox": {
+        "x1": 890.2,
+        "y1": 345.6,
+        "x2": 943.8,
+        "y2": 399.2
+      },
+      "confidence": 0.91,
+      "frame_number": 112
+    },
+    {
+      "track_id": 9,
+      "bbox": {
+        "x1": 456.7,
+        "y1": 567.8,
+        "x2": 509.3,
+        "y2": 620.4
+      },
+      "confidence": 0.88,
+      "frame_number": 134
+    }
+  ],
+  "weight_estimates": [
+    {
+      "track_id": 1,
+      "weight_value": 45.3,
+      "unit": "index",
+      "confidence": 0.78,
+      "uncertainty": 2.1,
+      "method": "bbox_area_with_perspective_averaged"
+    },
+    {
+      "track_id": 2,
+      "weight_value": 38.7,
+      "unit": "index",
+      "confidence": 0.75,
+      "uncertainty": 3.2,
+      "method": "bbox_area_with_perspective_averaged"
+    },
+    {
+      "track_id": 3,
+      "weight_value": 52.1,
+      "unit": "index",
+      "confidence": 0.82,
+      "uncertainty": 1.8,
+      "method": "bbox_area_with_perspective_averaged"
+    },
+    {
+      "track_id": 4,
+      "weight_value": 41.9,
+      "unit": "index",
+      "confidence": 0.76,
+      "uncertainty": 2.5,
+      "method": "bbox_area_with_perspective_averaged"
+    },
+    {
+      "track_id": 5,
+      "weight_value": 48.6,
+      "unit": "index",
+      "confidence": 0.80,
+      "uncertainty": 2.0,
+      "method": "bbox_area_with_perspective_averaged"
+    }
+  ],
+  "artifacts": {
+    "output_video": "outputs/videos/annotated_20231218_143022.mp4",
+    "output_json": "outputs/json/analysis_20231218_143022.json"
+  },
+  "metadata": {
+    "input_video": {
+      "fps": 30.0,
+      "frame_count": 900,
+      "width": 1920,
+      "height": 1080,
+      "duration_seconds": 30.0
+    },
+    "processing": {
+      "fps_sample": 2,
+      "conf_thresh": 0.5,
+      "iou_thresh": 0.4
+    },
+    "tracking_statistics": {
+      "total_unique_tracks": 25,
+      "average_count": 18.5,
+      "max_count": 22,
+      "min_count": 14,
+      "average_track_lifespan": 120.3,
+      "total_frames_processed": 450
+    },
+    "weight_statistics": {
+      "mean_weight_proxy": 44.2,
+      "std_weight_proxy": 7.8,
+      "min_weight_proxy": 28.5,
+      "max_weight_proxy": 63.4,
+      "total_samples": 2250
+    }
+  },
+  "calibration_notes": "\nWeight Proxy Calibration Notes:\n================================\n\nCurrent Method: Bounding box area with perspective correction\n\nTo convert weight proxy to actual grams, you need:\n\n1. Reference Object Calibration:\n   - Place objects of known size (e.g., 10cm x 10cm marker) in the frame\n   - Measure their bounding box size in pixels\n   - Calculate pixels-to-cm conversion factor\n   - Use bird size in cm² to estimate weight based on species growth curves\n\n2. Ground Truth Annotation:\n   - Manually weigh a sample of birds\n   - Record their weights and corresponding video timestamps\n   - Extract bounding box features for these birds\n   - Train a regression model: weight_proxy → actual_weight_grams\n\n3. Camera Calibration:\n   - Perform camera calibration to get intrinsic/extrinsic parameters\n   - Apply proper perspective correction\n   - Account for camera height and angle\n   - This improves accuracy significantly\n\n4. Species-Specific Models:\n   - Different poultry species have different size-to-weight ratios\n   - Collect species-specific training data\n   - Train separate models or use species as a feature\n\nCurrent proxy values are relative indices. Higher values indicate larger/heavier birds.\nTypical range: 0-100 (arbitrary units, depends on camera setup and bird size).\n"
+}
